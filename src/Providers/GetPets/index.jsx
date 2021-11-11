@@ -5,7 +5,7 @@ export const PetsContext = createContext([]);
 
 export const PetsProvider = ({ children }) => {
   const [pets, setPets] = useState([]);
-  const token = JSON.stringify(localStorage.getItem("token"));
+  const token = JSON.stringify(localStorage.getItem("@Pets:token"));
 
   useEffect(() => {
     api

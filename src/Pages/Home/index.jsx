@@ -3,7 +3,7 @@ import GenericCard from "../../Components/GenericCard";
 import { HomeContainer } from "./styles";
 
 const Home = () => {
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem("@Pets:token"));
   const history = useHistory();
 
   if (!token) {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pets from "../../../Assets/img/pets-ong-filtro20-80.png";
+import pets from "../../Assets/img/pets-ong-filtro20-80.png";
 
 export const CardContainer = styled.div`
   background-image: url(${pets});
