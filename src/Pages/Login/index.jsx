@@ -1,9 +1,9 @@
-// import LoginForm from "../../Components/LoginForm";
+import LoginForm from "../../Components/LoginForm";
 
 const Login = () => {
   return (
     <>
-      <h1>wefw</h1>
+      <LoginForm />
     </>
   );
 };
