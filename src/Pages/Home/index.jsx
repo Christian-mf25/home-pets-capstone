@@ -1,5 +1,5 @@
 import { useHistory } from "react-router";
-import GenericCard from "../Components/GenericCard";
+import GenericCard from "../../Components/GenericCard";
 import { HomeContainer } from "./styles";
 
 const Home = () => {
