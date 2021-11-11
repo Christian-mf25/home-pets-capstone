@@ -10,17 +10,17 @@ export const LoginProvider = ({ children }) => {
 
   const login = (data) => {
     api
-      .post("/login", data)
+      .post("/login/", data)
       .then((res) => {
         localStorage.clear();
-        toast.success(`Bem vindo pkejnrgek`);
+        console.log(res);
+        toast.success(`Bem vindo ${res.data.user.name}`);
         localStorage.setItem(
           "@Pets:token",
           JSON.stringify(res.data.accessToken)
         );
-        localStorage.setItem(
-					"@Pets:userId", 
-					JSON.stringify(res.data.user.id));
+        localStorage.setItem("@Pets:userId", JSON.stringify(res.data.user.id));
+        localStorage.setItem("@Pets:city", JSON.stringify(res.data.user.city));
         history.push("/home");
       })
       .catch((err) => {

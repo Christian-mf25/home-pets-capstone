@@ -3,13 +3,17 @@ import { Button, TextField } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import api from "../../Services/api";
-import { toast } from "react-toastify";
+import { useLogin } from "../../Providers/Login";
+import { useEffect } from "react";
 
 const LoginForm = () => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
-  // const { login } = useLogin();
+  const { login } = useLogin();
   const history = useHistory();
+
+	useEffect(() =>{
+		token && sendTo("/home")
+	},[token])
 
   const sendTo = (path) => {
     history.push(path);
@@ -26,27 +30,9 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const handleForm = (data) => {
-    api
-      .post("/login/", data)
-      .then((res) => {
-        localStorage.clear();
-        toast.success(`Bem vindo pkejnrgek`);
-        localStorage.setItem(
-          "@Pets:token",
-          JSON.stringify(res.data.accessToken)
-        );
-        localStorage.setItem("@Pets:userId", JSON.stringify(res.data.user.id));
-        history.push("/home");
-      })
-      .catch((_) => {
-        toast.error("E-mail ou senha inválido");
-      });
-  };
-
   return (
     <section>
-      <form onSubmit={handleSubmit(handleForm)}>
+      <form onSubmit={handleSubmit(login)}>
         <TextField
           label="E-mail"
           size="medium"
@@ -68,12 +54,14 @@ const LoginForm = () => {
           helperText={errors.password?.message}
         />
 
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" type="sumit">
           Entrar
         </Button>
       </form>
       <p>Ainda não tem conta?</p>
-      <Button onClick={() => sendTo("/register")}></Button>
+      <Button variant="contained" onClick={() => sendTo("/register")}>
+        Criar conta
+      </Button>
     </section>
   );
 };
