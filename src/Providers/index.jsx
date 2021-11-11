@@ -1,5 +1,11 @@
+import { LoginProvider } from "./Login";
+
 const Providers = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <>
+      <LoginProvider>{children}</LoginProvider>
+    </>
+  );
 };
 
 export default Providers;
