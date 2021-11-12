@@ -7,7 +7,6 @@ const Home = () => {
   const history = useHistory();
 
   if (!token) {
-    console.log("não tem token não bicho");
     history.push("/login");
   }
 
