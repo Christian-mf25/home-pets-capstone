@@ -1,10 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Button, TextField } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useLogin } from "../../Providers/Login";
 import { useEffect } from "react";
-import { Input, PrimaryButton, SecondaryButton } from "../../Styles/global";
 
 const LoginForm = () => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
@@ -33,16 +33,17 @@ const LoginForm = () => {
   return (
     <section>
       <form onSubmit={handleSubmit(login)}>
-        <Input
+        <TextField
           label="E-mail"
           size="medium"
           variant="outlined"
           margin="dense"
+          color="primary"
           {...register("email")}
           error={!!errors.email}
           helperText={errors.email?.message}
         />
-        <Input
+        <TextField
           label="Password"
           size="medium"
           variant="outlined"
@@ -53,14 +54,14 @@ const LoginForm = () => {
           helperText={errors.password?.message}
         />
 
-        <PrimaryButton variant="contained" type="submit">
+        <Button variant="contained" color="primary" type="sumit">
           Entrar
-        </PrimaryButton>
+        </Button>
       </form>
       <p>Ainda não tem conta?</p>
-      <SecondaryButton variant="contained" onClick={() => sendTo("/register")}>
+      <Button variant="contained" onClick={() => sendTo("/register")}>
         Criar conta
-      </SecondaryButton>
+      </Button>
     </section>
   );
 };
