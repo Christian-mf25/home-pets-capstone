@@ -55,6 +55,7 @@ export const SecondaryButton = styled(Button)`
 export const Input = styled(TextField)`
   & label.Mui-focused {
     color: #828282;
+    box-sizing: border-box;
   }
 
   &.MuiTextField-root {

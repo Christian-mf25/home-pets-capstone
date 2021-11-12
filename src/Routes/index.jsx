@@ -5,6 +5,7 @@ import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Users from "../Pages/Users";
 import Home from "../Pages/Home";
+import RegisterAPet from "../Pages/RegisterAPet";
 
 const Routes = () => {
   return (
@@ -31,6 +32,10 @@ const Routes = () => {
 
       <Route path="/profile">
         <Profile />
+      </Route>
+
+      <Route path="/registerapet">
+        <RegisterAPet />
       </Route>
     </Switch>
   );
