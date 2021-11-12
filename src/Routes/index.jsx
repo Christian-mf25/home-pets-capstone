@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import Register from "../Pages/Register";
-import HomePage from "../Pages/HomePage";
+import InstitutionalPage from "../Pages/InstitutionalPage";
 import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Users from "../Pages/Users";
@@ -10,7 +10,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage />
+        <InstitutionalPage />
       </Route>
 
       <Route path="/login">
@@ -25,7 +25,7 @@ const Routes = () => {
         <Home />
       </Route>
 
-      <Route path="/users">
+      <Route path="/users/:id">
         <Users />
       </Route>
 
@@ -36,4 +36,4 @@ const Routes = () => {
   );
 };
 
-export default Routes
+export default Routes;
