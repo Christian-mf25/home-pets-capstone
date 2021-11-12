@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import {
   Button,
   TextField,
-  Select,
-  InputLabel,
   FormControl,
 } from "@material-ui/core";
 import styled from "styled-components";

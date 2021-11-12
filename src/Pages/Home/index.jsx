@@ -12,9 +12,9 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <GenericCard name="ONGs" />
-      <GenericCard name="Empresas" />
-      <GenericCard name="Pessoas" />
+      <GenericCard flag={true} name="ONGs" />
+      <GenericCard flag={true} name="Empresas" />
+      <GenericCard flag={true} name="Pessoas" />
     </HomeContainer>
   );
 };

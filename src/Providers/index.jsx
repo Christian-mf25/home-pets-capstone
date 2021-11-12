@@ -1,11 +1,14 @@
 import { LoginProvider } from "./Login";
 import { RegisterAPetProvider } from "./RegisterAPet";
+import { RegisterProvider } from "./Register";
 
 const Providers = ({ children }) => {
   return (
     <>
       <LoginProvider>
-        <RegisterAPetProvider>{children}</RegisterAPetProvider>
+        <RegisterProvider>
+          <RegisterAPetProvider>{children}</RegisterAPetProvider>
+        </RegisterProvider>
       </LoginProvider>
     </>
   );
