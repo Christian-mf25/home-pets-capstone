@@ -1,16 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@material-ui/core";
+import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { usePetRegister } from "../../Providers/RegisterAPet";
+import { Input, PrimaryButton, StyledFormControl } from "../../Styles/global";
+import { RegisterContainer } from "./styles";
 
 const PetRegisterForm = () => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
@@ -42,14 +37,11 @@ const PetRegisterForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   return (
-    <section>
+    <RegisterContainer>
+      <h2>Cadastro de pet</h2>
       <form onSubmit={handleSubmit(petRegister)}>
-        <TextField
+        <Input
           label="Nome do pet"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("name")}
           error={!!errors.name}
           helperText={errors.name?.message}
@@ -65,74 +57,53 @@ const PetRegisterForm = () => {
             {...register("type")}
             error={!!errors.type}
             helperText={errors.type?.message}
-            label="Age"
+            label="Tipo do pet"
+            SelectDisplayProps={{
+              style: { width: 200 },
+            }}
           >
             <MenuItem value={"gato"}>Gato</MenuItem>
             <MenuItem value={"cachorro"}>Cachorro</MenuItem>
           </Select>
         </FormControl>
 
-        <TextField
+        <Input
           label="Cidade"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("city")}
           error={!!errors.city}
           helperText={errors.city?.message}
         />
 
-        <TextField
+        <Input
           label="Estado"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("state")}
           error={!!errors.state}
           helperText={errors.state?.message}
         />
 
-        <TextField
+        <Input
           label="Porte do animal"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("animalSize")}
           error={!!errors.animalSize}
           helperText={errors.animalSize?.message}
         />
 
-        <TextField
+        <Input
           label="Raça"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("breed")}
           error={!!errors.breed}
           helperText={errors.breed?.message}
         />
 
-        <TextField
+        <Input
           label="Pelagem"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("fur")}
           error={!!errors.fur}
           helperText={errors.fur?.message}
         />
 
-        <TextField
+        <Input
           label="Idade do pet"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("age")}
           error={!!errors.age}
           helperText={errors.age?.message}
@@ -143,13 +114,14 @@ const PetRegisterForm = () => {
             O pet é vacinado?
           </InputLabel>
           <Select
-            labelId="demo-simple-select-standard-label"
-            id="demo-simple-select-standard"
             //   value={type}
             {...register("vaccinated")}
             error={!!errors.vaccinated}
             helperText={errors.vaccinated?.message}
-            label="Age"
+            label="Vacinado"
+            SelectDisplayProps={{
+              style: { width: 190 },
+            }}
           >
             <MenuItem value={true}>Sim</MenuItem>
             <MenuItem value={false}>Não</MenuItem>
@@ -168,7 +140,10 @@ const PetRegisterForm = () => {
             {...register("castrated")}
             error={!!errors.castrated}
             helperText={errors.castrated?.message}
-            label="Age"
+            label="Castrado"
+            SelectDisplayProps={{
+              style: { width: 190 },
+            }}
           >
             <MenuItem value={true}>Sim</MenuItem>
             <MenuItem value={false}>Não</MenuItem>
@@ -176,23 +151,21 @@ const PetRegisterForm = () => {
           </Select>
         </FormControl>
 
-        <TextField
+        <Input
+          className="registerDescription"
+          multiline
+          rows={3}
+          rowsMax={4}
           placeholder="Conte one encontrou, seu comportamento, vacinas tomadas..."
           label="Conte mais sobre o pet"
-          size="medium"
-          variant="outlined"
-          margin="dense"
-          color="primary"
           {...register("description")}
           error={!!errors.description}
           helperText={errors.description?.message}
         />
 
-        <Button variant="contained" color="primary" type="sumit">
-          Cadastrar
-        </Button>
+        <PrimaryButton type="sumit">Cadastrar</PrimaryButton>
       </form>
-    </section>
+    </RegisterContainer>
   );
 };
 
