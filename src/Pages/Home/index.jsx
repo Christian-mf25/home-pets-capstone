@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import GenericCard from "../../Components/GenericCard";
+import PetRegisterForm from "../../Components/PetRegisterForm";
 import { HomeContainer } from "./styles";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <PetRegisterForm />
       <GenericCard name="ONGs" />
       <GenericCard name="Empresas" />
       <GenericCard name="Pessoas" />
