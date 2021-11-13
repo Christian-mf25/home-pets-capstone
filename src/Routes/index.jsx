@@ -26,7 +26,7 @@ const Routes = () => {
         <Home />
       </Route>
 
-      <Route path="/users">
+      <Route path="/users/:id">
         <Users />
       </Route>
 
