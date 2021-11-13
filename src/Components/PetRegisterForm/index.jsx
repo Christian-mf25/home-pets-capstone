@@ -67,7 +67,6 @@ const PetRegisterForm = () => {
             <Select
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
-              //   value={type}
               {...register("type")}
               error={!!errors.type}
               helperText={errors.type?.message}
