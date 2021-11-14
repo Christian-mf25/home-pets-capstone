@@ -1,7 +1,8 @@
+import ProfileDescriptions from "../../Components/ProfileDescriptions";
 const Profile = () => {
   return (
     <>
-      <h1>Profile</h1>
+      <ProfileDescriptions />
     </>
   );
 };

@@ -2,11 +2,15 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { useHistory } from "react-router";
 import { CardContainer } from "./styles";
 
-const GenericCard = ({ flag, name }) => {
+const GenericCard = ({ flag, name, item }) => {
   const newName = name.toLowerCase();
   const history = useHistory();
   const handleClick = () => {
-    history.push(`/users/${newName}`);
+    if (flag) {
+      history.push(`/users/${newName}`);
+    } else {
+      history.push(`/profile/`);
+    }
   };
 
   return (

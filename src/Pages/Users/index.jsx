@@ -36,10 +36,18 @@ const Users = () => {
 
         {filterUser.length > 0
           ? filterUser.map((item, index) => (
-              <GenericCard flag={false} name={item.name}></GenericCard>
+              <GenericCard
+                flag={false}
+                name={item.name}
+                item={item}
+              ></GenericCard>
             ))
           : newUsers.map((item, index) => (
-              <GenericCard flag={false} name={item.name}></GenericCard>
+              <GenericCard
+                flag={false}
+                name={item.name}
+                item={item}
+              ></GenericCard>
             ))}
       </UserContainer>
     </>
