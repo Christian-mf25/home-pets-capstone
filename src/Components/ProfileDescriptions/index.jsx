@@ -1,12 +1,11 @@
-import { useUsers } from "../../Providers/GetUsers";
-const ProfileDescriptions = () => {
-  const { users } = useUsers();
-  console.log(users);
+const ProfileDescriptions = ({ user }) => {
+  const newUser = user[0];
+
   return (
     <>
       <div>
         <img></img>
-        <h1>Title</h1>
+        <h1>{newUser.name}</h1>
       </div>
       <div>
         <h2>Data de Fundação</h2>

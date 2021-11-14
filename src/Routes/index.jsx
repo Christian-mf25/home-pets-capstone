@@ -30,7 +30,7 @@ const Routes = () => {
         <Users />
       </Route>
 
-      <Route path="/profile">
+      <Route path="/profile/:id">
         <Profile />
       </Route>
 
