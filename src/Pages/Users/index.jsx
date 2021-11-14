@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import GenericCard from "../../Components/GenericCard";
 import { UserContainer } from "./styles";
 import { Input } from "../../Styles/global";
-import { width } from "@material-ui/system";
 
 const Users = () => {
   const [users, setUsers] = useState([]);

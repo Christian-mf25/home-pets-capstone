@@ -9,7 +9,7 @@ const GenericCard = ({ flag, name, item }) => {
     if (flag) {
       history.push(`/users/${newName}`);
     } else {
-      history.push(`/profile/`);
+      history.push(`/profile/${item.id}`);
     }
   };
 

@@ -1,4 +1,7 @@
-const ProfileDescriptions = (item) => {
+import { useUsers } from "../../Providers/GetUsers";
+const ProfileDescriptions = () => {
+  const { users } = useUsers();
+  console.log(users);
   return (
     <>
       <div>
