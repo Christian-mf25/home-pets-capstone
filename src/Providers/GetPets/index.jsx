@@ -1,7 +1,7 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import api from "../../Services/api";
 
-export const PetsContext = createContext([]);
+export const PetsContext = createContext();
 
 export const PetsProvider = ({ children }) => {
   const [pets, setPets] = useState([]);
@@ -14,7 +14,7 @@ export const PetsProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((response) => setPets(response.data.results))
+      .then((response) => setPets(response.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -22,3 +22,5 @@ export const PetsProvider = ({ children }) => {
     <PetsContext.Provider value={{ pets }}>{children}</PetsContext.Provider>
   );
 };
+
+export const usePetsContext = () => useContext(PetsContext);
