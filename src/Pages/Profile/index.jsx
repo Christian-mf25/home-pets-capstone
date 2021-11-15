@@ -9,7 +9,6 @@ const Profile = () => {
   const { id } = useParams();
   const user = users.filter((item) => item.id === Number(id));
   const userPet = pets.filter((item) => item.userId === Number(id));
-  console.log(userPet);
   return (
     <>
       <ProfileDescriptions user={user[0]} />
