@@ -5,6 +5,8 @@ import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Users from "../Pages/Users";
 import Home from "../Pages/Home";
+import SuperiorMenuBar from "../Components/SuperiorMenuBar";
+import InferiorMenuBar from "../Components/InferiorMenuBar";
 
 const Routes = () => {
   return (
@@ -22,15 +24,21 @@ const Routes = () => {
       </Route>
 
       <Route path="/home">
+        <SuperiorMenuBar />
         <Home />
+        <InferiorMenuBar />
       </Route>
 
       <Route path="/users/:id">
+        <SuperiorMenuBar />
         <Users />
+        <InferiorMenuBar />
       </Route>
 
       <Route path="/profile">
+        <SuperiorMenuBar />
         <Profile />
+        <InferiorMenuBar />
       </Route>
     </Switch>
   );

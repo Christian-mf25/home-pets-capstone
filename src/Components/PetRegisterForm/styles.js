@@ -1,7 +1,27 @@
 import styled from "styled-components";
 import { Dialog } from "@material-ui/core";
+import logo2 from "../../Assets/img/menuIcone2.svg";
+
+export const StyledPetButton = styled.div`
+  button {
+    background-image: url(${logo2});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+`;
 
 export const StyledDialog = styled(Dialog)`
+  width: 315px;
   form {
     display: flex;
     flex-direction: column;
@@ -50,15 +70,20 @@ export const StyledDialog = styled(Dialog)`
   }
 
   @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 632px;
     .formDiv {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
 
+      .MuiFormControl-root {
+        width: 230px;
+      }
+
       .nomeType {
         .typePet {
-          margin-left: 38px;
-          padding: 0, 0, 12px, 0;
+          margin-left: 30px;
           width: 222px;
         }
       }

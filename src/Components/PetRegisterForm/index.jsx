@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { usePetRegister } from "../../Providers/RegisterAPet";
 import { Input, PrimaryButton } from "../../Styles/global";
-import { StyledDialog } from "./styles";
+import { StyledDialog, StyledPetButton } from "./styles";
 import { useState } from "react";
 
 const PetRegisterForm = () => {
@@ -42,8 +42,8 @@ const PetRegisterForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   return (
-    <>
-      <PrimaryButton onClick={handleClick}>Doar animal</PrimaryButton>
+    <StyledPetButton>
+      <button onClick={handleClick}></button>
       <StyledDialog className="dialog" open={isModalOpen} onClose={handleClick}>
         <form onSubmit={handleSubmit(petRegister)}>
           <div className="buttonDiv">
@@ -190,7 +190,7 @@ const PetRegisterForm = () => {
           </PrimaryButton>
         </form>
       </StyledDialog>
-    </>
+    </StyledPetButton>
   );
 };
 

@@ -1,9 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import {
-  Button,
-  TextField,
-  FormControl,
-} from "@material-ui/core";
+import { Button, TextField, FormControl } from "@material-ui/core";
 import styled from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
