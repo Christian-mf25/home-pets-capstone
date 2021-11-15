@@ -1,26 +1,67 @@
 import styled from "styled-components";
+import { Dialog } from "@material-ui/core";
 
-export const RegisterContainer = styled.div`
-  position: absolute;
-  overflow: scroll;
-  align-items: baseline;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  text-align: center;
-
+export const StyledDialog = styled(Dialog)`
   form {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    height: 750px;
-    justify-content: space-between;
+
+    .nomeType {
+      .typePet {
+        width: 215px;
+      }
+    }
+
+    .buttonDiv {
+      display: flex;
+      justify-content: space-between;
+      background-color: #4d27d9;
+      padding-left: 12px;
+      padding-right: 12px;
+      color: #fff;
+
+      button {
+        color: #fff;
+        background-color: transparent;
+        border: none;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    }
+
+    .formDiv {
+      padding: 10px;
+      padding-left: 12px;
+    }
+
+    .inputForm {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .inputFormDescription {
+      width: 230px;
+    }
+
+    .divSubmitButton {
+      margin: 10px;
+    }
   }
 
-  @media (min-width: 720px) {
-    form {
-      flex-direction: row;
+  @media (min-width: 768px) {
+    .formDiv {
+      display: flex;
+      justify-content: space-evenly;
       flex-wrap: wrap;
-      height: 350px;
+
+      .nomeType {
+        .typePet {
+          margin-left: 38px;
+          padding: 0, 0, 12px, 0;
+          width: 222px;
+        }
+      }
     }
   }
 `;

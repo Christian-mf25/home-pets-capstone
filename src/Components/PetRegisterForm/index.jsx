@@ -1,18 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  Dialog,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Modal,
-  Select,
-} from "@material-ui/core";
+import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { usePetRegister } from "../../Providers/RegisterAPet";
-import { Input, PrimaryButton, StyledFormControl } from "../../Styles/global";
-import { RegisterContainer } from "./styles";
+import { Input, PrimaryButton } from "../../Styles/global";
+import { StyledDialog } from "./styles";
 import { useState } from "react";
 
 const PetRegisterForm = () => {
@@ -51,134 +44,152 @@ const PetRegisterForm = () => {
   return (
     <>
       <PrimaryButton onClick={handleClick}>Doar animal</PrimaryButton>
-      <Dialog open={isModalOpen} onClose={handleClick}>
+      <StyledDialog className="dialog" open={isModalOpen} onClose={handleClick}>
         <form onSubmit={handleSubmit(petRegister)}>
-          <button onClick={handleClick}>Close</button>
-          <Input
-            label="Nome do pet"
-            {...register("name")}
-            error={!!errors.name}
-            helperText={errors.name?.message}
-          />
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Tipo de pet
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              {...register("type")}
-              error={!!errors.type}
-              helperText={errors.type?.message}
-              label="Tipo do pet"
-              SelectDisplayProps={{
-                style: { width: 200 },
-              }}
-            >
-              <MenuItem value={"gato"}>Gato</MenuItem>
-              <MenuItem value={"cachorro"}>Cachorro</MenuItem>
-            </Select>
-          </FormControl>
+          <div className="buttonDiv">
+            <p>Cadastrar animal</p>
+            <button onClick={handleClick}>X</button>
+          </div>
+          <div className="formDiv">
+            <div className="nomeType">
+              <Input
+                label="Nome do pet"
+                {...register("name")}
+                error={!!errors.name}
+                helperText={errors.name?.message}
+              />
+              <FormControl
+                className="typePet"
+                variant="standard"
+                sx={{ m: 1, minWidth: 120 }}
+              >
+                <InputLabel id="demo-simple-select-standard-label">
+                  Tipo de pet
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-standard-label"
+                  id="demo-simple-select-standard"
+                  {...register("type")}
+                  error={!!errors.type}
+                  helperText={errors.type?.message}
+                  label="Tipo do pet"
+                  SelectDisplayProps={{
+                    style: { width: 200 },
+                  }}
+                >
+                  <MenuItem value={"gato"}>Gato</MenuItem>
+                  <MenuItem value={"cachorro"}>Cachorro</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
 
-          <Input
-            label="Cidade"
-            {...register("city")}
-            error={!!errors.city}
-            helperText={errors.city?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Cidade"
+              {...register("city")}
+              error={!!errors.city}
+              helperText={errors.city?.message}
+            />
 
-          <Input
-            label="Estado"
-            {...register("state")}
-            error={!!errors.state}
-            helperText={errors.state?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Estado"
+              {...register("state")}
+              error={!!errors.state}
+              helperText={errors.state?.message}
+            />
 
-          <Input
-            label="Porte do animal"
-            {...register("animalSize")}
-            error={!!errors.animalSize}
-            helperText={errors.animalSize?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Porte do animal"
+              {...register("animalSize")}
+              error={!!errors.animalSize}
+              helperText={errors.animalSize?.message}
+            />
 
-          <Input
-            label="Raça"
-            {...register("breed")}
-            error={!!errors.breed}
-            helperText={errors.breed?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Raça"
+              {...register("breed")}
+              error={!!errors.breed}
+              helperText={errors.breed?.message}
+            />
 
-          <Input
-            label="Pelagem"
-            {...register("fur")}
-            error={!!errors.fur}
-            helperText={errors.fur?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Pelagem"
+              {...register("fur")}
+              error={!!errors.fur}
+              helperText={errors.fur?.message}
+            />
 
-          <Input
-            label="Idade do pet"
-            {...register("age")}
-            error={!!errors.age}
-            helperText={errors.age?.message}
-          />
+            <Input
+              className="inputForm"
+              label="Idade do pet"
+              {...register("age")}
+              error={!!errors.age}
+              helperText={errors.age?.message}
+            />
 
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              O pet é vacinado?
-            </InputLabel>
-            <Select
-              //   value={type}
-              {...register("vaccinated")}
-              error={!!errors.vaccinated}
-              helperText={errors.vaccinated?.message}
-              label="Vacinado"
-              SelectDisplayProps={{
-                style: { width: 190 },
-              }}
-            >
-              <MenuItem value={true}>Sim</MenuItem>
-              <MenuItem value={false}>Não</MenuItem>
-              <MenuItem value={false}>Não sei</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-standard-label">
+                O pet é vacinado?
+              </InputLabel>
+              <Select
+                //   value={type}
+                {...register("vaccinated")}
+                error={!!errors.vaccinated}
+                helperText={errors.vaccinated?.message}
+                label="Vacinado"
+                SelectDisplayProps={{
+                  style: { width: 190 },
+                }}
+              >
+                <MenuItem value={true}>Sim</MenuItem>
+                <MenuItem value={false}>Não</MenuItem>
+                <MenuItem value={false}>Não sei</MenuItem>
+              </Select>
+            </FormControl>
 
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              O pet é castrado?
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              //   value={type}
-              {...register("castrated")}
-              error={!!errors.castrated}
-              helperText={errors.castrated?.message}
-              label="Castrado"
-              SelectDisplayProps={{
-                style: { width: 190 },
-              }}
-            >
-              <MenuItem value={true}>Sim</MenuItem>
-              <MenuItem value={false}>Não</MenuItem>
-              <MenuItem value={false}>Não sei</MenuItem>
-            </Select>
-          </FormControl>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-standard-label">
+                O pet é castrado?
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-standard-label"
+                id="demo-simple-select-standard"
+                //   value={type}
+                {...register("castrated")}
+                error={!!errors.castrated}
+                helperText={errors.castrated?.message}
+                label="Castrado"
+                SelectDisplayProps={{
+                  style: { width: 190 },
+                }}
+              >
+                <MenuItem value={true}>Sim</MenuItem>
+                <MenuItem value={false}>Não</MenuItem>
+                <MenuItem value={false}>Não sei</MenuItem>
+              </Select>
+            </FormControl>
 
-          <Input
-            className="registerDescription"
-            multiline
-            rows={3}
-            rowsMax={4}
-            placeholder="Conte one encontrou, seu comportamento, vacinas tomadas..."
-            label="Conte mais sobre o pet"
-            {...register("description")}
-            error={!!errors.description}
-            helperText={errors.description?.message}
-          />
-
-          <PrimaryButton type="sumit">Cadastrar</PrimaryButton>
+            <Input
+              className="inputForm inputFormDescription"
+              multiline
+              rows={3}
+              rowsMax={4}
+              placeholder="Conte one encontrou, seu comportamento, vacinas tomadas..."
+              label="Conte mais sobre o pet"
+              {...register("description")}
+              error={!!errors.description}
+              helperText={errors.description?.message}
+            />
+          </div>
+          <PrimaryButton className="divSubmitButton" type="sumit">
+            Cadastrar
+          </PrimaryButton>
         </form>
-      </Dialog>
+      </StyledDialog>
     </>
   );
 };
