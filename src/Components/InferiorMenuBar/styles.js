@@ -8,7 +8,9 @@ export const InferiorContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: fixed;
   bottom: 0;
+  width: 100%;
 
   div {
     height: 45px;
@@ -21,8 +23,8 @@ export const InferiorContainer = styled.div`
     background-position: center;
     background-color: transparent;
     border: none;
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 8px;
   }
   .icone:hover {
@@ -35,7 +37,8 @@ export const InferiorContainer = styled.div`
   }
 
   .iconeTres {
-    background-image: url(${logo3});
+    background-color: #fff;
+    color: #4d27d9;
     margin-right: 10px;
   }
 

@@ -10,9 +10,10 @@ export const StyledPetButton = styled.div`
     background-position: center;
     background-color: transparent;
     border: none;
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 8px;
+    margin-top: 5px;
   }
 
   button:hover {
@@ -38,6 +39,8 @@ export const StyledDialog = styled(Dialog)`
       background-color: #4d27d9;
       padding-left: 12px;
       padding-right: 12px;
+      height: 40px;
+      align-items: center;
       color: #fff;
 
       button {
