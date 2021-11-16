@@ -11,7 +11,6 @@ export const RegisterAPetProvider = ({ children }) => {
 
   const petRegister = (data) => {
     const newData = { ...data, img: petsImg, userId: id };
-    console.log(token);
     api
       .post("petDonation/", newData, {
         headers: {
