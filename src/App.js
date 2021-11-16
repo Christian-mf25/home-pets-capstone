@@ -16,7 +16,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      <h1>Home Pets</h1>
       <Routes />
     </div>
   );
