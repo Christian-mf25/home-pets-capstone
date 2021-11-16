@@ -1,11 +1,6 @@
 import { useHistory } from "react-router-dom";
 import PetRegisterForm from "../PetRegisterForm";
 import { SuperiorContainer } from "./styles";
-import MenuIcon from "@mui/icons-material/Menu";
-import * as React from "react";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import { MenuItem } from "@material-ui/core";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useLogin } from "../../Providers/Login";
