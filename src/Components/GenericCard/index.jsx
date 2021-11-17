@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { CardContainer, CardPets } from "./styles";
 
 const GenericCard = ({ flag, name, item, cardType, idPet }) => {
-  const newName = name.toLowerCase();
+  const newName = name?.toLowerCase();
   const history = useHistory();
   const handleClick = () => {
     if (cardType === "petCard") {

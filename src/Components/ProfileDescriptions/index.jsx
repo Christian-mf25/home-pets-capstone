@@ -27,7 +27,7 @@ const ProfileDescriptions = ({ user }) => {
         </div>
         <Input placeholder="Pesquisa por" className="input" />
 
-        <div>
+        <div className="ContainerCard">
           {filtredCats.map((item, index) => (
             <GenericCard
               key={index}
@@ -45,7 +45,7 @@ const ProfileDescriptions = ({ user }) => {
         </div>
         <Input placeholder="Pesquisa por" className="input" />
 
-        <div>
+        <div className="ContainerCard">
           {filtredDogs.map((item, index) => (
             <>
               <GenericCard

@@ -44,4 +44,10 @@ export const ContainerAnimals = styled.div`
     margin: 20px 0 10px 0;
     width: 90%;
   }
+  .ContainerCard {
+    display: flex;
+    width: 100%;
+    height: 133px;
+    overflow-y: hidden;
+  }
 `;
