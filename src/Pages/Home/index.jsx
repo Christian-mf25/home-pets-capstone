@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <div style={{ width: "90vw", height: "30vh", margin: "0 auto" }}>
+      <div className="mapContainer">
         <h2>Você está aqui</h2>
         <WrappedMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCHH9rcwldwaOZ5T4nlmPd18FYx1PU5afg`}
@@ -30,9 +30,11 @@ const Home = () => {
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
-      <GenericCard flag={true} name="ONGs" />
-      <GenericCard flag={true} name="Empresas" />
-      <GenericCard flag={true} name="Pessoas" />
+      <div className="cardsContainer">
+        <GenericCard flag={true} name="ONGs" />
+        <GenericCard flag={true} name="Empresas" />
+        <GenericCard flag={true} name="Pessoas" />
+      </div>
     </HomeContainer>
   );
 };

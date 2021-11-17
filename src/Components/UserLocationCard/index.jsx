@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import { LocationContainer } from "./styles";
 
 const Map = () => {
   const [gotUsetLocation, setGotUsetLocation] = useState(false);
@@ -15,14 +16,14 @@ const Map = () => {
   }, []);
 
   return (
-    <>
+    <LocationContainer>
       {gotUsetLocation && (
         <GoogleMap
-          defaultZoom={10}
+          defaultZoom={13}
           defaultCenter={{ lat: userLat, lng: userLng }}
         />
       )}
-    </>
+    </LocationContainer>
   );
 };
 

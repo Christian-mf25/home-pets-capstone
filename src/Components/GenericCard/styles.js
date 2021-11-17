@@ -32,7 +32,7 @@ export const CardContainer = styled.div`
   }
 
   @media (min-width: 720px) {
-    width: 370px;
+    width: auto;
     height: 100px;
   }
 
