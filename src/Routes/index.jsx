@@ -7,6 +7,7 @@ import Users from "../Pages/Users";
 import Home from "../Pages/Home";
 import SuperiorMenuBar from "../Components/SuperiorMenuBar";
 import InferiorMenuBar from "../Components/InferiorMenuBar";
+import ProfilePets from "../Pages/ProfilePets";
 
 const Routes = () => {
   return (
@@ -35,7 +36,7 @@ const Routes = () => {
         <InferiorMenuBar />
       </Route>
 
-      <Route path="/profile">
+      <Route path="/profile/:id">
         <SuperiorMenuBar />
         <Profile />
         <InferiorMenuBar />

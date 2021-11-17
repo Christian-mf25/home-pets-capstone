@@ -1,27 +1,22 @@
-import api from "../../Services/api/index";
-import { useEffect, useState } from "react";
+import { useUsers } from "../../Providers/GetUsers";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import GenericCard from "../../Components/GenericCard";
 import { UserContainer } from "./styles";
 import { Input } from "../../Styles/global";
-import { width } from "@material-ui/system";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
   const { id } = useParams();
   const [searchUser, setSearchUser] = useState("");
 
   const newId = id === "ongs" ? "ONG" : id === "empresas" ? "PJ" : "PF";
 
-  useEffect(() => {
-    api
-      .get("users/")
-      .then((response) => setUsers(response.data))
-      .catch((err) => console.log(err));
-  }, []);
+  const { users } = useUsers();
   const newUsers = users.filter((item) => item.type === newId);
+
+  //Listar somente pesquisado através do campo de busca
   const filterUser = users.filter(
-    (item) => item.name.toLowerCase() === searchUser.toLowerCase()
+    (item) => item.name?.toLowerCase() === searchUser.toLowerCase()
   );
 
   return (
@@ -36,10 +31,18 @@ const Users = () => {
 
         {filterUser.length > 0
           ? filterUser.map((item, index) => (
-              <GenericCard flag={false} name={item.name}></GenericCard>
+              <GenericCard
+                flag={false}
+                name={item.name}
+                item={item}
+              ></GenericCard>
             ))
           : newUsers.map((item, index) => (
-              <GenericCard flag={false} name={item.name}></GenericCard>
+              <GenericCard
+                flag={false}
+                name={item.name}
+                item={item}
+              ></GenericCard>
             ))}
       </UserContainer>
     </>
