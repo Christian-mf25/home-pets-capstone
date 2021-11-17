@@ -1,12 +1,12 @@
 import { usePetsContext } from "../../Providers/GetPets";
-import petsImg from "../../Assets/img/pets-ong-filtro20-80.png";
 import { useParams } from "react-router-dom";
 import {
   ContainerGeneral,
   ContainerAnimals,
 } from "../ProfileDescriptions/styles";
-import { Input, PrimaryButton } from "../../Styles/global";
+import { Input } from "../../Styles/global";
 import GenericCard from "../GenericCard";
+import CardProfileUsers from "../CardProfileUsers";
 
 const ProfileDescriptions = ({ user }) => {
   const { id } = useParams();
@@ -19,35 +19,7 @@ const ProfileDescriptions = ({ user }) => {
   );
   return (
     <ContainerGeneral>
-      <div className="ContainerDetails">
-        <div className="ContainerHeader">
-          <img src={petsImg} />
-          <h1>{user.name}</h1>
-        </div>
-        <div className="ContainerDetails">
-          <div className="Details">
-            <h2>Data de Fundação</h2>
-            <p>{user.foundationDate}</p>
-          </div>
-          <div className="Details">
-            <h2>Localização</h2>
-            <p>{user.city}</p>
-          </div>
-          <div className="DetailsDescription">
-            <h2>Descrição </h2>
-            <p>{user.description}</p>
-          </div>
-          <div className="Details">
-            <h2>Cachorros</h2>
-            <p>{user.numberOfDogs}</p>
-          </div>
-          <div className="Details">
-            <h2>Gatos</h2>
-            <p>{user.numberOfCats}</p>
-          </div>
-        </div>
-        <PrimaryButton className="Button">Doar um valor</PrimaryButton>
-      </div>
+      <CardProfileUsers user={user} />
 
       <ContainerAnimals>
         <div className="header">

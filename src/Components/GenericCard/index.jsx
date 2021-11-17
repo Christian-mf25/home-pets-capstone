@@ -7,7 +7,7 @@ const GenericCard = ({ flag, name, item, cardType, idPet }) => {
   const history = useHistory();
   const handleClick = () => {
     if (cardType === "petCard") {
-      history.push(`/pets/${idPet}`);
+      history.push(`/profile/pet/${idPet}`);
     } else if (flag) {
       history.push(`/users/${newName}`);
     } else {

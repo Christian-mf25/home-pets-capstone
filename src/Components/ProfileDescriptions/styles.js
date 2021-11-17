@@ -1,65 +1,20 @@
 import styled from "styled-components";
 
 export const ContainerGeneral = styled.div`
-  background: linear-gradient(to bottom, #a592eb 41%, #ffff 29%);
+  background: linear-gradient(to bottom, #a592eb 16%, #ffff 10%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 420px) {
+    background: linear-gradient(to bottom, #a592eb 33%, #ffff 10%);
+  }
   @media (min-width: 768px) {
     background: linear-gradient(to bottom, #a592eb 33%, #ffff 10%);
     flex-direction: row;
     justify-content: space-evenly;
     align-items: stretch;
-  }
-
-  .ContainerDetails {
-    display: flex;
-    flex-direction: column;
-    max-width: 389px;
-  }
-  .ContainerHeader {
-    border-radius: 3px 3px 0 0;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 195px;
-    background-color: #4d27d9;
-    img {
-      width: 103px;
-      border-radius: 50%;
-    }
-    h1 {
-      color: #ffff;
-    }
-  }
-
-  .ContainerDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .Details {
-      width: 90%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 15px 0 15px 0;
-    }
-    .DetailsDescription {
-      margin-top: 5px;
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      h2 {
-        margin-bottom: 20px;
-      }
-    }
-  }
-  .Button {
-    width: 90%;
   }
 `;
 
