@@ -11,7 +11,14 @@ import {
   SecondaryButton,
   StyledFormControl,
 } from "../../Styles/global";
-import { Container, ContainerForm, ContainerModal, DivLogo, Form, HomeMain } from "./style";
+import {
+  Container,
+  ContainerForm,
+  ContainerModal,
+  DivLogo,
+  Form,
+  HomeMain,
+} from "./style";
 
 const RegisterForm = () => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
@@ -123,6 +130,7 @@ const RegisterForm = () => {
                   />
 
                   <Input
+                    type="password"
                     label="Senha"
                     size="medium"
                     variant="outlined"
@@ -134,6 +142,7 @@ const RegisterForm = () => {
                   />
 
                   <Input
+                    type="password"
                     label="Confirmar senha"
                     size="medium"
                     variant="outlined"
