@@ -13,8 +13,14 @@ import { useEffect } from "react";
 
 const RegisterForm = () => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
-  const { handleChange, userType, showModalType, showType, sendTo, registerForm } =
-    useRegister();
+  const {
+    handleChange,
+    userType,
+    showModalType,
+    showType,
+    sendTo,
+    registerForm,
+  } = useRegister();
 
   useEffect(() => {
     token && sendTo("/home");
@@ -97,6 +103,7 @@ const RegisterForm = () => {
           />
 
           <Input
+            type="password"
             label="Senha"
             size="medium"
             variant="outlined"
@@ -108,6 +115,7 @@ const RegisterForm = () => {
           />
 
           <Input
+            type="password"
             label="Confirmar senha"
             size="medium"
             variant="outlined"
