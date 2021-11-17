@@ -1,16 +1,18 @@
 import { Switch, Route } from "react-router-dom";
 import Register from "../Pages/Register";
-import HomePage from "../Pages/HomePage";
+import InstitutionalPage from "../Pages/InstitutionalPage";
 import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Users from "../Pages/Users";
 import Home from "../Pages/Home";
+import SuperiorMenuBar from "../Components/SuperiorMenuBar";
+import InferiorMenuBar from "../Components/InferiorMenuBar";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage />
+        <InstitutionalPage />
       </Route>
 
       <Route path="/login">
@@ -22,18 +24,24 @@ const Routes = () => {
       </Route>
 
       <Route path="/home">
+        <SuperiorMenuBar />
         <Home />
+        <InferiorMenuBar />
       </Route>
 
-      <Route path="/users">
+      <Route path="/users/:id">
+        <SuperiorMenuBar />
         <Users />
+        <InferiorMenuBar />
       </Route>
 
-      <Route path="/profile">
+      <Route path="/profile/:id">
+        <SuperiorMenuBar />
         <Profile />
+        <InferiorMenuBar />
       </Route>
     </Switch>
   );
 };
 
-export default Routes
+export default Routes;
