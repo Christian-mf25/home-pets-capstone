@@ -47,13 +47,22 @@ const ProfileDescriptions = ({ user }) => {
 
         <div>
           {filtredDogs.map((item, index) => (
-            <GenericCard
-              key={index}
-              name={item.name}
-              item={item}
-              cardType="petCard"
-              idPet={item.id}
-            />
+            <>
+              <GenericCard
+                key={index}
+                name={item.name}
+                item={item}
+                cardType="petCard"
+                idPet={item.id}
+              />
+              <GenericCard
+                key={index}
+                name={item.name}
+                item={item}
+                cardType="petCard"
+                idPet={item.id}
+              />
+            </>
           ))}
         </div>
       </ContainerAnimals>
