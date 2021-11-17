@@ -36,12 +36,18 @@ export const SuperiorContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      width: 165px;
+      width: 210px;
 
       div {
-        margin-right: 10px;
-        width: 45px;
-        height: 45px;
+        margin-right: 9px;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+
+        button {
+          width: 40px;
+          height: 40px;
+        }
       }
 
       .icone {
@@ -51,8 +57,8 @@ export const SuperiorContainer = styled.div`
         background-color: transparent;
         border: none;
         border-radius: 8px;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
       }
 
       .icone:hover {
@@ -65,7 +71,9 @@ export const SuperiorContainer = styled.div`
       }
 
       .iconeTres {
-        background-image: url(${logo3});
+        color: #4d27d9;
+        background-color: #fff;
+        /* background-image: url(${logo3}); */
         margin-right: 10px;
       }
     }
