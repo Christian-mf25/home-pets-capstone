@@ -31,5 +31,11 @@ export const ContainerAnimals = styled.div`
     width: 100%;
     height: 133px;
     overflow-y: hidden;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+    }
   }
 `;

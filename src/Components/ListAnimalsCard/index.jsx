@@ -1,12 +1,13 @@
 import { Input } from "../../Styles/global";
 import { ContainerAnimals } from "./styles";
 import GenericCard from "../GenericCard/index";
-const ListAnimalsCard = ({ filtredPets }) => {
+const ListAnimalsCard = ({ filtredPets, cats }) => {
   return (
     <>
       <ContainerAnimals>
         <div className="header">
-          {filtredPets[0].type === "gato" ? <h3>Gato</h3> : <h3>Cachorro</h3>}
+          {cats ? <h3>Gato</h3> : <h3>Cachorro</h3>}
+          {/* <h3>Pets</h3> */}
         </div>
         <Input placeholder="Pesquisa por" className="input" />
 
