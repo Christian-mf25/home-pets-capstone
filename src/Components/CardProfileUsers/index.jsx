@@ -10,13 +10,12 @@ const CardProfileUsers = ({ user, edit }) => {
 
   const { updateProfile } = UserUpdateProfile();
 
-  const [values, setValues] = useState({
-    birthDate: "",
-    city: "",
-    description: "",
-    numberOfCats: "",
-    numberOfDogs: "",
-  });
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    updateProfile(data);
+    console.log(data);
+  };
 
   return (
     <>
@@ -56,7 +55,7 @@ const CardProfileUsers = ({ user, edit }) => {
             <img src={petsImg} alt="Pets" />
             <h1>{user?.name}</h1>
           </div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="ContainerDetails">
               <div className="Details">
                 <h2>Data de Fundação</h2>
@@ -65,6 +64,7 @@ const CardProfileUsers = ({ user, edit }) => {
                   size="medium"
                   variant="outlined"
                   margin="dense"
+                  {...register("birthDate")}
                 />
               </div>
               <div className="Details">
@@ -74,6 +74,7 @@ const CardProfileUsers = ({ user, edit }) => {
                   size="medium"
                   variant="outlined"
                   margin="dense"
+                  {...register("city")}
                 />
               </div>
               <div className="DetailsDescription">
@@ -83,6 +84,7 @@ const CardProfileUsers = ({ user, edit }) => {
                   size="medium"
                   variant="outlined"
                   margin="dense"
+                  {...register("description")}
                 />
               </div>
               <div className="Details">
@@ -92,6 +94,7 @@ const CardProfileUsers = ({ user, edit }) => {
                   size="medium"
                   variant="outlined"
                   margin="dense"
+                  {...register("numberOfDogs")}
                 />
               </div>
               <div className="Details">
@@ -101,6 +104,7 @@ const CardProfileUsers = ({ user, edit }) => {
                   size="medium"
                   variant="outlined"
                   margin="dense"
+                  {...register("numberOfCats")}
                 />
               </div>
               <PrimaryButton
@@ -114,6 +118,7 @@ const CardProfileUsers = ({ user, edit }) => {
           </form>
         </ContainerDetails>
       )}
+      s
     </>
   );
 };

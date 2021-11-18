@@ -5,22 +5,20 @@ import api from "../../Services/api";
 export const UpdateUserProfileContext = createContext();
 
 export const UpdateUserProfileProvider = ({ children }) => {
-  const id = JSON.parse(localStorage.getItem("@Pets:id"));
+  const id = JSON.parse(localStorage.getItem("@Pets:userId"));
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
 
   const updateProfile = (data) => {
-    const newData = { ...data, userId: id };
     api
-      .post("users/", newData, {
+      .patch(`users/${id}`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((_) => {
-        toast.success(`${newData.name} Atualizado com sucesso!`);
+      .then(() => {
+        toast.success(`${data.name} Atualizado com sucesso!`);
       })
       .catch((err) => {
-        console.log(err);
         toast.error("Algo deu errado, tente novamente mais tarde");
       });
   };
