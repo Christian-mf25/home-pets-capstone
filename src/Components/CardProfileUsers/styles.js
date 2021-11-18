@@ -47,4 +47,8 @@ export const ContainerDetails = styled.div`
       width: 90%;
     }
   }
+
+  @media (min-width: 720px) {
+    min-width: 250px;
+  }
 `;
