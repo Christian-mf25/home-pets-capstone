@@ -14,13 +14,13 @@ export const ContainerDetails = styled.div`
     justify-content: space-evenly;
     width: 100%;
     height: 195px;
-    background-color: #4d27d9;
+    background-color: var(--color-secondary);
     img {
       width: 103px;
       border-radius: 50%;
     }
     h1 {
-      color: #ffff;
+      color: var(--color-gray-0);
     }
   }
 
@@ -50,7 +50,10 @@ export const ContainerDetails = styled.div`
       width: 90%;
     }
   }
-
+  .Icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
   @media (min-width: 768px) {
     width: 30%;
   }

@@ -1,7 +1,7 @@
 import { ContainerDetails } from "./styles";
 import petsImg from "../../Assets/img/pets-ong-filtro20-80.png";
 import { Input, PrimaryButton } from "../../Styles/global";
-
+import { FaDonate } from "react-icons/fa";
 import { UserUpdateProfile } from "../../Providers/UdpateUser/index";
 import { useForm } from "react-hook-form";
 
@@ -44,7 +44,10 @@ const CardProfileUsers = ({ user, edit }) => {
               <p>{user?.numberOfCats}</p>
             </div>
           </div>
-          <PrimaryButton className="Button">Doar um valor</PrimaryButton>
+          <PrimaryButton className="Button">
+            <FaDonate className="Icon" />
+            Doar um valor
+          </PrimaryButton>
         </ContainerDetails>
       ) : (
         <ContainerDetails>

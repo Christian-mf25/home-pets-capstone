@@ -17,7 +17,7 @@ const ProfileDescriptions = ({ user }) => {
   return (
     <ContainerGeneral>
       <CardProfileUsers user={user} />
-      <ListAnimalsCard filtredPets={filtredCats} />
+      <ListAnimalsCard filtredPets={filtredCats} cats={true} />
       <ListAnimalsCard filtredPets={filtredDogs} />
     </ContainerGeneral>
   );
