@@ -28,8 +28,9 @@ export const HomeContainer = styled.div`
   @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
-    width: 950px;
+    width: 1100px;
     margin: 0 auto;
+    margin-top: 50px;
 
     .cardsContainer {
       flex-direction: column;
