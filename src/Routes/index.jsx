@@ -7,7 +7,8 @@ import Users from "../Pages/Users";
 import Home from "../Pages/Home";
 import SuperiorMenuBar from "../Components/SuperiorMenuBar";
 import InferiorMenuBar from "../Components/InferiorMenuBar";
-import ProfilePets from "../Pages/ProfilePets";
+// import ProfilePets from "../Pages/ProfilePets";
+import ProfileEdit from "../Pages/ProfileEdit";
 
 const Routes = () => {
   return (
@@ -36,9 +37,15 @@ const Routes = () => {
         <InferiorMenuBar />
       </Route>
 
-      <Route path="/profile/:id">
+      <Route exact path="/profile/:id">
         <SuperiorMenuBar />
         <Profile />
+        <InferiorMenuBar />
+      </Route>
+
+      <Route path="/profile/edit/:id">
+        <SuperiorMenuBar />
+        <ProfileEdit />
         <InferiorMenuBar />
       </Route>
     </Switch>

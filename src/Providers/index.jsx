@@ -3,6 +3,7 @@ import { RegisterAPetProvider } from "./RegisterAPet";
 import { RegisterProvider } from "./Register";
 import { UsersProvider } from "./GetUsers";
 import { PetsProvider } from "./GetPets";
+import { UpdateUserProfileProvider } from "./UdpateUser";
 const Providers = ({ children }) => {
   return (
     <>
@@ -10,7 +11,11 @@ const Providers = ({ children }) => {
         <RegisterProvider>
           <RegisterAPetProvider>
             <UsersProvider>
-              <PetsProvider>{children}</PetsProvider>
+              <PetsProvider>
+                <UpdateUserProfileProvider>
+                  {children}
+                </UpdateUserProfileProvider>
+              </PetsProvider>
             </UsersProvider>
           </RegisterAPetProvider>
         </RegisterProvider>
