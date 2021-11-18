@@ -74,13 +74,13 @@ export const CardPets = styled.div`
   }
 
   @media (min-width: 720px) {
-    width: 370px;
-    max-width: 370px;
+    width: 90%;
+    /* max-width: 370px; */
     height: 100px;
   }
 
   @media (min-width: 1024px) {
-    width: 390px;
+    width: 90%;
     height: 130px;
   }
 `;

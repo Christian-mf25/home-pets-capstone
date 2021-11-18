@@ -6,6 +6,7 @@ export const ContainerGeneral = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 150px;
 
   @media (min-width: 420px) {
     background: linear-gradient(to bottom, #a592eb 33%, #ffff 10%);

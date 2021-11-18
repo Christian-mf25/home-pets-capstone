@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const ContainerDetails = styled.div`
   display: flex;
   flex-direction: column;
+  width: 90%;
+  border-radius: 5px;
 
   .ContainerHeader {
     border-radius: 3px 3px 0 0;
@@ -26,6 +28,7 @@ export const ContainerDetails = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffff;
 
     .Details {
       width: 90%;
@@ -48,7 +51,7 @@ export const ContainerDetails = styled.div`
     }
   }
 
-  @media (min-width: 720px) {
-    min-width: 250px;
+  @media (min-width: 768px) {
+    width: 30%;
   }
 `;

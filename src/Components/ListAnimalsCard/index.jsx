@@ -5,10 +5,7 @@ const ListAnimalsCard = ({ filtredPets, cats }) => {
   return (
     <>
       <ContainerAnimals>
-        <div className="header">
-          {cats ? <h3>Gato</h3> : <h3>Cachorro</h3>}
-          {/* <h3>Pets</h3> */}
-        </div>
+        <div className="header">{cats ? <h3>Gato</h3> : <h3>Cachorro</h3>}</div>
         <Input placeholder="Pesquisa por" className="input" />
 
         <div className="ContainerCard">
