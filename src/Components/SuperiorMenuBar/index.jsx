@@ -8,13 +8,14 @@ import { useLogin } from "../../Providers/Login";
 const SuperiorMenuBar = () => {
   const { logOut } = useLogin();
   const history = useHistory();
+  const id = JSON.parse(localStorage.getItem("@Pets:userId"));
 
   const handleclickLogo = () => {
     history.push("/home");
   };
 
   const handleClickProfile = () => {
-    history.push("/profile");
+    history.push(`/profile/edit/${id}`);
   };
 
   const handleLogout = () => {

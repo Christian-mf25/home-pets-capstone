@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ContainerDetails = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 389px;
 
   .ContainerHeader {
     border-radius: 3px 3px 0 0;
@@ -47,5 +46,9 @@ export const ContainerDetails = styled.div`
     .Button {
       width: 90%;
     }
+  }
+
+  @media (min-width: 720px) {
+    min-width: 250px;
   }
 `;

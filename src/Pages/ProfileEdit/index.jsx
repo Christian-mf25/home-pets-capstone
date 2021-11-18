@@ -16,7 +16,6 @@ const ProfileEdit = () => {
   const filtredDogs = pets.filter(
     (item) => item.userId === Number(id) && item.type === "cachorro"
   );
-  console.log(user, filtredCats, filtredDogs);
   return (
     <ContainerProfileEdit>
       <CardProfileUsers user={user[0]} edit={true} />

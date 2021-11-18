@@ -1,20 +1,17 @@
 import { ContainerDetails } from "./styles";
 import petsImg from "../../Assets/img/pets-ong-filtro20-80.png";
 import { Input, PrimaryButton } from "../../Styles/global";
-import { useState } from "react";
+
 import { UserUpdateProfile } from "../../Providers/UdpateUser/index";
 import { useForm } from "react-hook-form";
 
 const CardProfileUsers = ({ user, edit }) => {
-  const token = JSON.parse(localStorage.getItem("@Pets:token"));
-
   const { updateProfile } = UserUpdateProfile();
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     updateProfile(data);
-    console.log(data);
   };
 
   return (
@@ -118,7 +115,6 @@ const CardProfileUsers = ({ user, edit }) => {
           </form>
         </ContainerDetails>
       )}
-      s
     </>
   );
 };

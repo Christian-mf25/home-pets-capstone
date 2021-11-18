@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerAnimals = styled.div`
   display: flex;
-  max-width: 423px;
+
   flex-direction: column;
   align-items: center;
   background-color: #fff;
