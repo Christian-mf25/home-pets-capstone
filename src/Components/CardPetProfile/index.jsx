@@ -5,11 +5,11 @@ const CardPetProfile = ({ pet }) => {
     <>
       <ContainerPetCard>
         <div className="header">
-          <h3>Name</h3>
+          <h3>{pet.name}</h3>
         </div>
         <div>
           <h3>Biografia</h3>
-          <p>Descrição</p>
+          <p>{pet.description}</p>
         </div>
         <PrimaryButton>Adotar</PrimaryButton>
       </ContainerPetCard>
