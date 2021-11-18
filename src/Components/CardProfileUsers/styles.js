@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ContainerDetails = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 389px;
 
   .ContainerHeader {
     border-radius: 3px 3px 0 0;
