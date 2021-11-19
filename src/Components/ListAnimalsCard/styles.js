@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const ContainerAnimals = styled.div`
   display: flex;
-
+  width: 90%;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #fff;
   margin-top: 10px;
   border-radius: 3px 3px 0 0;
@@ -35,7 +36,12 @@ export const ContainerAnimals = styled.div`
     @media (min-width: 768px) {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      width: 100%;
       height: 50vh;
     }
+  }
+  @media (min-width: 768px) {
+    width: 30%;
   }
 `;

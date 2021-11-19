@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const ContainerDetails = styled.div`
   display: flex;
   flex-direction: column;
+  width: 90%;
+  border-radius: 5px;
 
   .ContainerHeader {
     border-radius: 3px 3px 0 0;
@@ -12,13 +14,13 @@ export const ContainerDetails = styled.div`
     justify-content: space-evenly;
     width: 100%;
     height: 195px;
-    background-color: #4d27d9;
+    background-color: var(--color-secondary);
     img {
       width: 103px;
       border-radius: 50%;
     }
     h1 {
-      color: #ffff;
+      color: var(--color-gray-0);
     }
   }
 
@@ -26,6 +28,7 @@ export const ContainerDetails = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffff;
 
     .Details {
       width: 90%;
@@ -47,8 +50,11 @@ export const ContainerDetails = styled.div`
       width: 90%;
     }
   }
-
-  @media (min-width: 720px) {
-    min-width: 250px;
+  .Icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  @media (min-width: 768px) {
+    width: 30%;
   }
 `;

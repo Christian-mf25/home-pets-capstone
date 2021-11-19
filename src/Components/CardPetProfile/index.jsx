@@ -1,6 +1,6 @@
 import { ContainerPetCard } from "../CardPetProfile/styles";
 import { PrimaryButton } from "../../Styles/global";
-const CardPetProfile = ({ pet }) => {
+const CardPetProfile = ({ pet, emailOng }) => {
   return (
     <>
       <ContainerPetCard>
@@ -11,7 +11,14 @@ const CardPetProfile = ({ pet }) => {
           <h3>Biografia</h3>
           <p>{pet.description}</p>
         </div>
-        <PrimaryButton>Adotar</PrimaryButton>
+        <PrimaryButton>
+          <a
+            href={`mailto:${emailOng}?subject=${"Título"}&body=${"Body to email"}
+`}
+          >
+            Adotar
+          </a>
+        </PrimaryButton>
       </ContainerPetCard>
     </>
   );

@@ -15,7 +15,7 @@ const ProfilePets = () => {
   return (
     <ContainerProfilePets>
       <CardProfileUsers user={user[0]} />
-      <CardPetProfile pet={pet[0]} />
+      <CardPetProfile pet={pet[0]} emailOng={user[0].email} />
     </ContainerProfilePets>
   );
 };

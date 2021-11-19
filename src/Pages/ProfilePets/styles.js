@@ -4,6 +4,7 @@ export const ContainerProfilePets = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
+  align-items: center;
 
   @media (min-width: 720px) {
     display: flex;

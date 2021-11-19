@@ -3,6 +3,8 @@ export const ContainerPetCard = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: column;
+  width: 90%;
+  margin-top: 20px;
 
   .header {
     background-color: var(--color-secondary);
@@ -15,6 +17,9 @@ export const ContainerPetCard = styled.div`
     }
   }
 
+  a {
+    color: #ffff;
+  }
   @media (min-width: 720px) {
     display: flex;
     flex-direction: column;

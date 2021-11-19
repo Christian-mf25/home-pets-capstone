@@ -4,14 +4,16 @@ export const UserContainer = styled.div`
   border: 1px solid #f5f5f5;
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
 
   .Input {
     width: 369px;
+    margin: 0 auto;
   }
 
   @media (min-width: 720px) {
     display: flex;
-    align-itens: center;
+    align-items: center;
     justify-content: center;
     width: 670px;
     margin: 0 auto;
