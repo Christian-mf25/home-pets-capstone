@@ -1,7 +1,17 @@
+import { useUsers } from "../../Providers/GetUsers";
+
+import ProfileDescriptions from "../../Components/ProfileDescriptions";
+import { useParams } from "react-router-dom";
+
 const Profile = () => {
+  const { users } = useUsers();
+
+  const { id } = useParams();
+  const user = users.filter((item) => item.id === Number(id));
+
   return (
     <>
-      <h1>Profile</h1>
+      <ProfileDescriptions user={user[0]} />
     </>
   );
 };
