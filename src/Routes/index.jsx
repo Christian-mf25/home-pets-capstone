@@ -1,6 +1,5 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Register from "../Pages/Register";
-import InstitutionalPage from "../Pages/InstitutionalPage";
 import Profile from "../Pages/Profile";
 import Login from "../Pages/Login";
 import Users from "../Pages/Users";
@@ -14,7 +13,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <InstitutionalPage />
+        <Redirect to="/login" />
       </Route>
 
       <Route path="/login">

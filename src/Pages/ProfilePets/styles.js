@@ -11,5 +11,6 @@ export const ContainerProfilePets = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
+    grid-gap: 30px;
   }
 `;
