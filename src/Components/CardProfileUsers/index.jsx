@@ -44,10 +44,10 @@ const CardProfileUsers = ({ user, edit }) => {
               <p>{user?.numberOfCats}</p>
             </div>
           </div>
-          <PrimaryButton className="Button">
+          {/* <PrimaryButton className="Button">
             <FaDonate className="Icon" />
             Doar um valor
-          </PrimaryButton>
+          </PrimaryButton> */}
         </ContainerDetails>
       ) : (
         <ContainerDetails>
