@@ -3,7 +3,7 @@ export const ContainerPetCard = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  max-width: 90%;
   margin-top: 20px;
 
   .header {
@@ -24,5 +24,6 @@ export const ContainerPetCard = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 320px;
+    max-width: 80%;
   }
 `;
